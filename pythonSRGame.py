@@ -49,11 +49,15 @@ def Game():
                     try:
                         guess = r.recognize_google(audio)
                         guess = guess.split(" ")[0]
-                        if guess == color:
+                        if guess.lower() == color:
                             print(fg("green") + "Correct")
                             score += 1
+                        elif guess.lower() == "quit" or guess.lower() == "close" or guess.lower() == "leave":
+                            sys.exit()
                         else:
                             print(fg("red") + "Wrong")
+                            print(fg("red") + "Correct answer was: "+ color + ". You said : " +guess)
+
                             wrong_guesses += 1
                         time.sleep(2)
                     except sr.UnknownValueError:
@@ -67,11 +71,14 @@ def Game():
                     try:
                         guess = r.recognize_google(audio)
                         guess = guess.split(" ")[0]
-                        if guess == color:
+                        if guess.lower() == text:
                             print(fg("green") + "Correct")
                             score += 1
+                        elif guess.lower() == "quit" or guess.lower() == "close" or guess.lower() == "leave":
+                            sys.exit()
                         else:
                             print(fg("red") + "Wrong")
+                            print(fg("red") + "Correct answer was: "+ color + ". You said : " +guess)
                             wrong_guesses += 1
                         time.sleep(2)
                     except sr.UnknownValueError:
