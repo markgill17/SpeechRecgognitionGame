@@ -24,7 +24,6 @@ fonts = [
     'univers',
 ]
 
-
 def Game():
     wrong_guesses = 0
     score = 0
@@ -51,10 +50,10 @@ def Game():
                         guess = r.recognize_google(audio)
                         guess = guess.split(" ")[0]
                         if guess == color:
-                            print(fg("green") + f.renderText("Correct"))
+                            print(fg("green") + "Correct")
                             score += 1
                         else:
-                            print(fg("red") + f.renderText("Wrong"))
+                            print(fg("red") + "Wrong")
                             wrong_guesses += 1
                         time.sleep(2)
                     except sr.UnknownValueError:
@@ -68,32 +67,32 @@ def Game():
                     try:
                         guess = r.recognize_google(audio)
                         guess = guess.split(" ")[0]
-                        if guess == text:
-                            print(fg("green") + f.renderText("Correct"))
+                        if guess == color:
+                            print(fg("green") + "Correct")
                             score += 1
                         else:
-                            print(fg("red") + f.renderText("Wrong"))
+                            print(fg("red") + "Wrong")
                             wrong_guesses += 1
                         time.sleep(2)
                     except sr.UnknownValueError:
                         print("Google Speech Recognition could not understand audio")
                     except sr.RequestError as e:
                         print("Could not request results from Google Speech Recognition service; {0}".format(e))
-            if wrong_guesses >= 0:
+            if wrong_guesses == 5:
                 running = False
                 break
-    print(fg("blue") + f.renderText("Game over! You scored " + str(score) + " points"))
+    print(fg("blue") + "Game over! You scored " + str(score) + " points")
     time.sleep(5)
     if running is False:
-        print(fg("green") + f.renderText("Wanna play again?"))
+        print(fg("green") + "Wanna play again?")
         time.sleep(4)
         with microphone as source:
-            print(attr("reset") + f.renderText("Yes or no?"))
+            print(attr("reset") + "Yes or no?")
             audio = r.listen(source)
             decision = r.recognize_google(audio)
             decision = decision.split(" ")[0]
             if decision == "yes" or decision == "Yes":
-                print(fg("green") + f.renderText("Get Ready"))
+                print(fg("green") + "Get Ready")
                 running = True
                 time.sleep(7)
                 pass
@@ -102,5 +101,32 @@ def Game():
                 sys.exit()
         Game()
 
+#Game()
 
-Game()
+
+def Main():
+    with microphone as source:
+        print(attr("reset") + "Welcome to the colour aptitude test")
+        print(attr("reset") + "You will be prompted to either say the colour of the text displayed, or the actual "
+                              "word itself")
+        print(attr("reset") + "Do you want to play?")
+        print(attr("reset") + "Yes or No")
+        try:
+            audio = r.listen(source)
+            decision = r.recognize_google(audio)
+            decision = decision.split(" ")[0]
+            if decision == "yes" or decision == "Yes":
+                print(fg("green") + "Get Ready")
+                running = True
+                time.sleep(3)
+                pass
+            else:
+                print(fg("red") + "Bye")
+                sys.exit()
+        except sr.UnknownValueError:
+            print("Google Speech Recognition could not understand audio")
+        except sr.RequestError as e:
+            print("Could not request results from Google Speech Recognition service; {0}".format(e))
+    Game()
+
+Main()
