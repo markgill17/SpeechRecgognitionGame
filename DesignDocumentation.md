@@ -13,9 +13,10 @@
 
 ### Project Overview
 * The game we decided to build was a Brain training game using **Word and Colour** association. The player will see the word of a colour in a certain colour, for example: the word green in the colour red. The player will then be prompted to speak either the colour of the word they see or the word itself.
-* We decided to code the project using python for a number of reasons one fo which is that we have become increasingly familiar with this language over the course of our final two years. Another reason for coding this project in python is because of the compact and easy to implement libraries make the project easy to implement quickly, We needed to consider ease of implementation and quick development because we needed to build aproject from scratch and we couldn't salvage any of our original game
+* We decided to code the project using python for a number of reasons one fo which is that we have become increasingly familiar with this language over the course of our final two years. Another reason for coding this project in python is because of the compact and easy to implement libraries make the project easy to implement quickly, We needed to consider ease of implementation and quick development because we needed to build a project from scratch and we couldn't salvage any of our original game. Finding these libraries was a god send for getting this project done.
 
 ### Purpose of the application
+* The purpose of this project is a simple, easy to use brain training game. This game is obviously a speech operated, the game itself is built specifically to accommodate speech commands.
 
 ### Hardware used
 
