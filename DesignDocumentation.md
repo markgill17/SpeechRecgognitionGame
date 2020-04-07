@@ -30,7 +30,7 @@
 
 * The player's score will increase for each right answer they get. However if they get three incorrect they will lose them game. This is how the player gets into the fail state of the game. Both the score and the game over are implemented using simple recurring conditional statements and incremental counters.
 
-* If the player gets to the fail state of the game
+* If the player gets to the fail state of the game they will be asked if they want to play again. In this code path the other options are 'Yes' to play again or 'No' which quits the game. If the player chooses to exit then the game will stop. If the player chooses to play again then the method which contains the game functionality will recursivly call itself. This will start the player at the beginning of the game.
 
 ### Conclusion
 * In conclusion we found this project to be extremly stressful due to the nesscessary changes due to the involving circumstances. However we feel that the sudden deadline and complete overhaul of the project encourged us to think carefully about what we were going to build, this made us consider exactly what needed to be done. We did not have time to develop something that may take to much time and result is a broken game. So we went with something simple and easy to deliver. It is regretable that we could not use our original idea as we were looking forward to building something in Unity that used a Kinect. But speech recognition proved to a be a much more realiable and implementable form of hardware. The limitations of speech operated game are made up for with the ease of developing one.
