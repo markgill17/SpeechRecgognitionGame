@@ -9,7 +9,7 @@
 
 ## A Speech Recognition Brain Training Game
 ### Introduction
-* Due to our original idea for the project (a Kinect boxing game) no longer being compatible with the hardware we are using, we decided to come up with a new idea. We spent some time trying to think of an idea that would work with speech gestures. We contemplated a number of games such as *Snake* or *Pong*. However we could find no way of making this games using speech commands that would be intuitive in the case of *Pong*, or fun in the case of *Snake*
+* Due to our original idea for the project (a Kinect boxing game) no longer being compatible with the hardware we are using, we decided to come up with a new idea. We spent some time trying to think of an idea that would work with speech gestures. We contemplated a number of games such as *Snake* or *Pong*. However we could find no way of making this games using speech commands that would be intuitive in the case of *Pong*, or fun in the case of *Snake*. For this reason we racked our brains in order to come up with an idea that would work better for speech gestures. We needed to think of an idea that would be based on speech and not just some game where the gameplay options are adapted into speech gestures. 
 
 ### Project Overview
 
