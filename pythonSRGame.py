@@ -11,6 +11,7 @@ microphone = sr.Microphone()
 with microphone as source:
     r.adjust_for_ambient_noise(source, duration=5)
 
+#using tuples to store values to be used randomly
 font_colours = ['red', 'blue', 'green', ]
 bg_colours = ['red', 'blue', 'green', ]
 fonts = [
@@ -45,7 +46,7 @@ def Game():
             if objectiveDecider == 1:
                 with microphone as source:
                     print(attr("reset") + "Say the colour of the text")
-                    audio = r.listen(source, phrase_time_limit=3)
+                    audio = r.listen(source, phrase_time_limit=2)
                     try:
                         guess = r.recognize_google(audio)
                         guess = guess.split(" ")[0]
@@ -67,7 +68,7 @@ def Game():
             elif objectiveDecider == 2:
                 with microphone as source:
                     print(attr("reset") + "Say the word!")
-                    audio = r.listen(source, phrase_time_limit=3)
+                    audio = r.listen(source, phrase_time_limit=2)
                     try:
                         guess = r.recognize_google(audio)
                         guess = guess.split(" ")[0]
@@ -122,8 +123,8 @@ def Main():
         #time.sleep(2)
         print(attr("reset") + "Yes or No")
         time.sleep(2)
-        print("Answer now!")
         try:
+            print("Answer now!")
             audio = r.listen(source, phrase_time_limit=3)
             decision = r.recognize_google(audio)
             decision = decision.split(" ")[0]
