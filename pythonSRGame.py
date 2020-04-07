@@ -9,7 +9,7 @@ import speech_recognition as sr
 r = sr.Recognizer()
 microphone = sr.Microphone()
 with microphone as source:
-    r.adjust_for_ambient_noise(source, duration=1)
+    r.adjust_for_ambient_noise(source, duration=5)
 
 font_colours = ['red', 'blue', 'green', ]
 bg_colours = ['red', 'blue', 'green', ]
@@ -45,7 +45,7 @@ def Game():
             if objectiveDecider == 1:
                 with microphone as source:
                     print(attr("reset") + "Say the colour of the text")
-                    audio = r.listen(source)
+                    audio = r.listen(source, phrase_time_limit=3)
                     try:
                         guess = r.recognize_google(audio)
                         guess = guess.split(" ")[0]
@@ -67,7 +67,7 @@ def Game():
             elif objectiveDecider == 2:
                 with microphone as source:
                     print(attr("reset") + "Say the word!")
-                    audio = r.listen(source)
+                    audio = r.listen(source, phrase_time_limit=3)
                     try:
                         guess = r.recognize_google(audio)
                         guess = guess.split(" ")[0]
@@ -85,7 +85,7 @@ def Game():
                         print("Google Speech Recognition could not understand audio")
                     except sr.RequestError as e:
                         print("Could not request results from Google Speech Recognition service; {0}".format(e))
-            if wrong_guesses == 5:
+            if wrong_guesses == 2:
                 running = False
                 break
     print(fg("blue") + "Game over! You scored " + str(score) + " points")
@@ -95,7 +95,7 @@ def Game():
         time.sleep(4)
         with microphone as source:
             print(attr("reset") + "Yes or no?")
-            audio = r.listen(source)
+            audio = r.listen(source, phrase_time_limit=3)
             decision = r.recognize_google(audio)
             decision = decision.split(" ")[0]
             if decision == "yes" or decision == "Yes":
@@ -114,12 +114,17 @@ def Game():
 def Main():
     with microphone as source:
         print(attr("reset") + "Welcome to the colour aptitude test")
+        #time.sleep(2)
         print(attr("reset") + "You will be prompted to either say the colour of the text displayed, or the actual "
                               "word itself")
+        #time.sleep(5)
         print(attr("reset") + "Do you want to play?")
+        #time.sleep(2)
         print(attr("reset") + "Yes or No")
+        time.sleep(2)
+        print("Answer now!")
         try:
-            audio = r.listen(source)
+            audio = r.listen(source, phrase_time_limit=3)
             decision = r.recognize_google(audio)
             decision = decision.split(" ")[0]
             if decision == "yes" or decision == "Yes":
@@ -131,9 +136,9 @@ def Main():
                 print(fg("red") + "Bye")
                 sys.exit()
         except sr.UnknownValueError:
-            print("Google Speech Recognition could not understand audio")
+           print("Google Speech Recognition could not understand audio")
         except sr.RequestError as e:
-            print("Could not request results from Google Speech Recognition service; {0}".format(e))
+           print("Could not request results from Google Speech Recognition service; {0}".format(e))
     Game()
 
 Main()
