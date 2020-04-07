@@ -1,12 +1,20 @@
-# A Speech Recognition Brain Training Game
+#  Gesture Based User Interface Project Design Doc
+#### By Mark Gill and Aaron Burns
 
-## Project Overview
+## A Speech Recognition Brain Training Game
 
-## Purpose of the application
+### Introduction
 
-## Hardware used
+### Project Overview
 
-## Conclusion
+### Purpose of the application
 
+### Hardware used
+
+### Conclusion
 
 ## References
+[https://kivy.org/#home](https://kivy.org/#home)
+[https://pypi.org/project/PyAudio/](https://pypi.org/project/PyAudio/)
+[https://realpython.com/pygame-a-primer/](https://realpython.com/pygame-a-primer/)
+[https://pypi.org/project/pyfiglet/0.7/](https://pypi.org/project/pyfiglet/0.7/)
