@@ -6,7 +6,6 @@
 
 * The new project specification mentioned using speech recognition as a gesture instead of what we originaly planned and that is what we did. Originally the idea was to create the game in Unity. This would not have been a problem for out team. As one of us is a windows used and the other is a Linux user and Unity is supported by that version of Linux. However because the bases for our project specification changed from visual gestures with the kinect to speech. We were unable to think of a way to utilise our original idea with speech commands.
 
-
 ## A Speech Recognition Brain Training Game
 ### Introduction
 * Due to our original idea for the project (a Kinect boxing game) no longer being compatible with the hardware we are using, we decided to come up with a new idea. We spent some time trying to think of an idea that would work with speech gestures. We contemplated a number of games such as *Snake* or *Pong*. However we could find no way of making these games using speech commands that would be intuitive in the case of *Pong*, or fun in the case of *Snake*. For this reason we racked our brains in order to come up with an idea that would work better for speech gestures. We needed to think of an idea that would be based on speech and not just some game where the gameplay options are adapted into speech gestures.
@@ -19,11 +18,13 @@
 * The purpose of this project is a simple, easy to use brain training game. Brain training help the player exercise their brain by presenting them with quandries that require the player to stop and think for a second before giving an answer
 
 ### Gestures identified
-* The gestures that are recognized for this game are speech commands. The speech commands are very simple, The user will only have to say either a name or a colour. The player will see a text on the screen. It will be in a certain colour and the test itself will also be the name of a colour. The user will see a prompt below the coloured text that will ask the player to seay the colour they see or the name of the colour the text is. The speech commands that are recognized by the player are colours *red, green and blue*. 
+* The gestures that are recognized for this game are speech commands. The speech commands are very simple, The user will only have to say either a name or a colour. The player will see a text on the screen. It will be in a certain colour and the test itself will also be the name of a colour. The user will see a prompt below the coloured text that will ask the player to seay the colour they see or the name of the colour the text is. The speech commands that are recognized by the player are colours *red, green and blue*. If the player answers correctly, i.e. they follow the instruction prompt correctly, they will be given an indication that they are correct. If they answer incorrectly they will be given an indication of that as well. 
 
 ### Hardware used
+* The Hardware used was obviously the speech recognition hardware built into a laptop. The software we used to access this hardware was from a built in python module called **SpeechRecognition** as well as some other modules (These are specified in the requirements.txt file)
 
 ### Conclusion
+* In conclusion we found this project to be extremly stressful due to the nesscessary changes due to the involving circumstances. However we feel that the sudden deadline and complete overhaul of the project encourged us to think carefully about what we were going to build, this made us consider exactly what needed to be done. We did not have time to develop something that may take to much time and result is a broken game. So we went with something simple and easy to deliver. It is regretable that we could not use our original idea as we were looking forward to building something in Unity that used a Kinect. But speech recognition proved to a be a much more realiable and implementable form of hardware. The limitations of speech operated game are made up for with the ease of developing one.
 
 ## References
 [https://kivy.org/#home](https://kivy.org/#home)  
